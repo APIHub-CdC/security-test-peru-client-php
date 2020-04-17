@@ -212,7 +212,7 @@ class PruebaDeSeguridadApi
             );
         }
 
-          $resourcePath = '/v1/securitytest';
+        $resourcePath = '';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
