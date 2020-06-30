@@ -11,8 +11,8 @@ class PruebaDeSeguridadApiTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $password = getenv('KEY_PASSWORD');
-        $this->keypair = '/Users/globatos/Documents/CERTIFICADOS/keypair.p12';
-        $this->cert = '/Users/globatos/Documents/CERTIFICADOS/cdc_cert_1222746041.pem';
+        $this->keypair = '/path/to/keypair.p12';
+        $this->cert = '/path/to/certificate.pem';
 
         $this->signer = new \Signer\Manager\Interceptor\KeyHandler($this->keypair, $this->cert, $password);
         
@@ -32,7 +32,7 @@ class PruebaDeSeguridadApiTest extends \PHPUnit_Framework_TestCase
 
     public function testSecurityTest()
     {
-        $x_api_key = "3nxAay74GQAWZSJZekdedX52HlFViMTI";
+        $x_api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         $body = "Esto es un mensaje de prueba";
 
         try {
