@@ -1,6 +1,6 @@
 <?php
 
-namespace SecurityTestPeru\Client;
+namespace Security\Test;
 
 use \Exception;
 

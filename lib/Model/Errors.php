@@ -3,7 +3,7 @@
 namespace SecurityTestPeru\Client\Model;
 
 use \ArrayAccess;
-use \SecurityTestPeru\Client\ObjectSerializer;
+use \Security\Test\ObjectSerializer;
 
 
 class Errors implements ModelInterface, ArrayAccess

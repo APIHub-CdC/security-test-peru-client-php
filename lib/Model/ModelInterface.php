@@ -1,6 +1,6 @@
 <?php
 
-namespace SecurityTestPeru\Client\Model;
+namespace Security\Test\Model;
 
 
 interface ModelInterface
