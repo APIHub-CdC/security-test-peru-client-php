@@ -16,6 +16,7 @@ class PruebaDeSeguridadApiTest extends \PHPUnit_Framework_TestCase
 
         $config = new \SecurityTestPeru\Client\Configuration();
         $config->setHost('the_url');
+        
         $this->apiInstance = new \SecurityTestPeru\Client\Api\PruebaDeSeguridadApi($client, $config);
     }
 
