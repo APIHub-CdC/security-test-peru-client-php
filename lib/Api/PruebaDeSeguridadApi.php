@@ -1,6 +1,6 @@
 <?php
 
-namespace Security\Test\Api;
+namespace Security\Test\Peru\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -9,9 +9,9 @@ use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Signer\Manager\ApiException;
-use Security\Test\Configuration;
-use Security\Test\HeaderSelector;
-use Security\Test\ObjectSerializer;
+use Security\Test\Peru\Configuration;
+use Security\Test\Peru\HeaderSelector;
+use Security\Test\Peru\ObjectSerializer;
 
 
 class PruebaDeSeguridadApi
@@ -105,7 +105,7 @@ class PruebaDeSeguridadApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Security\Test\Model\Errors',
+                        '\Security\Test\Peru\Model\Errors',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -113,7 +113,7 @@ class PruebaDeSeguridadApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Security\Test\Model\Errors',
+                        '\Security\Test\Peru\Model\Errors',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -121,7 +121,7 @@ class PruebaDeSeguridadApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Security\Test\Model\Errors',
+                        '\Security\Test\Peru\Model\Errors',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -129,7 +129,7 @@ class PruebaDeSeguridadApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Security\Test\Model\Errors',
+                        '\Security\Test\Peru\Model\Errors',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -137,7 +137,7 @@ class PruebaDeSeguridadApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Security\Test\Model\Errors',
+                        '\Security\Test\Peru\Model\Errors',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

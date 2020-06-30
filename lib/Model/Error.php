@@ -1,6 +1,6 @@
 <?php
 
-namespace Security\Test\Model;
+namespace Security\Test\Peru\Model;
 
 use \ArrayAccess;
 use \Security\Test\ObjectSerializer;

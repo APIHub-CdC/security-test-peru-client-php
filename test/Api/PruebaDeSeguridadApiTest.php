@@ -1,7 +1,7 @@
 <?php
-namespace SecurityTestPeru\Client;
+namespace Security\Test\Peru;
 
-use Security\Test\Configuration;
+use Security\Test\Peru\Configuration;
 use Signer\Manager\ApiException;
 use Signer\Manager\Interceptor\MiddlewareEvents;
 use Signer\Manager\Interceptor\KeyHandler;
@@ -24,9 +24,9 @@ class PruebaDeSeguridadApiTest extends \PHPUnit_Framework_TestCase
         $client = new \GuzzleHttp\Client(['handler' => $handler]);
 
         $config = new Configuration();
-        $config->setHost('https://services.circulodecredito.com.pe/v1/securitytest');
+        $config->setHost('the_url');
 
-        $this->apiInstance = new \Security\Test\Api\PruebaDeSeguridadApi($client,$config);
+        $this->apiInstance = new \Security\Test\Peru\Api\PruebaDeSeguridadApi($client,$config);
         
     }
 

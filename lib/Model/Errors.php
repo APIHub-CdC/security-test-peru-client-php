@@ -1,9 +1,9 @@
 <?php
 
-namespace SecurityTestPeru\Client\Model;
+namespace Security\Test\Peru\Model;
 
 use \ArrayAccess;
-use \Security\Test\ObjectSerializer;
+use \Security\Test\Peru\ObjectSerializer;
 
 
 class Errors implements ModelInterface, ArrayAccess
@@ -15,7 +15,7 @@ class Errors implements ModelInterface, ArrayAccess
 
     
     protected static $apihubTypes = [
-        'errors' => '\SecurityTestPeru\Client\Model\Error[]'
+        'errors' => '\Security\Test\Peru\Client\Model\Error[]'
     ];
 
     
