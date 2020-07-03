@@ -1,22 +1,33 @@
 <?php
-namespace SecurityTestPeru\Client;
+namespace Security\Test\Peru;
+
+use Security\Test\Peru\Configuration;
+use Signer\Manager\ApiException;
+use Signer\Manager\Interceptor\MiddlewareEvents;
+use Signer\Manager\Interceptor\KeyHandler;
 
 class PruebaDeSeguridadApiTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
         $password = getenv('KEY_PASSWORD');
-        $this->signer = new \SecurityTestPeru\Client\Interceptor\KeyHandler(null, null, $password);
-        $events = new \SecurityTestPeru\Client\Interceptor\MiddlewareEvents($this->signer);
+        $this->keypair = '/path/to/keypair.p12';
+        $this->cert = '/path/to/certificate.pem';
+
+        $this->signer = new \Signer\Manager\Interceptor\KeyHandler($this->keypair, $this->cert, $password);
+        
+        $events = new MiddlewareEvents($this->signer);
         $handler = \GuzzleHttp\HandlerStack::create();
         $handler->push($events->add_signature_header('x-signature'));
         $handler->push($events->verify_signature_header('x-signature'));
 
         $client = new \GuzzleHttp\Client(['handler' => $handler]);
 
-        $config = new \SecurityTestPeru\Client\Configuration();
+        $config = new Configuration();
         $config->setHost('the_url');
-        $this->apiInstance = new \SecurityTestPeru\Client\Api\PruebaDeSeguridadApi($client, $config);
+
+        $this->apiInstance = new \Security\Test\Peru\Api\PruebaDeSeguridadApi($client,$config);
+        
     }
 
     public function testSecurityTest()

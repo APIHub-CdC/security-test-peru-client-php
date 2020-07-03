@@ -1,9 +1,9 @@
 <?php
 
-namespace SecurityTestPeru\Client\Model;
+namespace Security\Test\Peru\Model;
 
 use \ArrayAccess;
-use \SecurityTestPeru\Client\ObjectSerializer;
+use \Security\Test\ObjectSerializer;
 
 
 class Error implements ModelInterface, ArrayAccess
